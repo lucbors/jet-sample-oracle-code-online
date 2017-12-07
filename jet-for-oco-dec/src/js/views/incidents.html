@@ -1,0 +1,42 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-applayout-page">
+    <div class="oj-applayout-fixed-top">
+        <!--
+         ** Oracle JET V4.1.0 hybrid mobile application header pattern.
+         ** Please see the Oracle JET Cookbook App Shell: Hybrid Mobile demos for
+         ** more information on how to use this pattern.
+        -->
+        <header role="banner" class="oj-hybrid-applayout-header" data-bind="ojModule: headerConfig">
+        </header>
+    </div>
+    <!-- This is where your main page content will be loaded -->
+    <div class="oj-applayout-content">
+        <div role="main" class="oj-hybrid-applayout-content">
+            <div class="oj-hybrid-padding">
+                <h1>Incidents Content Area</h1>
+                <div>
+
+                    <oj-button id='button3' on-click='[[takePicture]]' chroming='full'>Take Picture</oj-button>
+                    <br/><br/>                    
+                    <oj-button id='button4' on-click='[[uploadPicture]]' chroming='full'>Upload to Cloud</oj-button>
+
+
+                    <ul data-bind="foreach: pics" class="oj-flex oj-flex-items-pad">
+                        <li style="list-style: none" class="oj-flex-item">
+                            <input type="image"
+                                   style="border:1px solid black"
+                                   data-bind="attr:{src: $data}"
+                                   width="250"
+                                   height="250"
+                                   alt="No picture taken."/>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

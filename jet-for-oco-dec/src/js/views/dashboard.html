@@ -1,0 +1,51 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-applayout-page">
+    <div class="oj-applayout-fixed-top">
+        <!--
+         ** Oracle JET V4.1.0 hybrid mobile application header pattern.
+         ** Please see the Oracle JET Cookbook App Shell: Hybrid Mobile demos for
+         ** more information on how to use this pattern.
+        -->
+        <header role="banner" class="oj-hybrid-applayout-header" data-bind="ojModule: headerConfig">
+        </header>
+    </div>
+    <!-- This is where your main page content will be loaded -->
+    <div class="oj-applayout-content">
+        <div role="main" class="oj-hybrid-applayout-content">
+            <div class="oj-hybrid-padding">
+                <h1>Dashboard Content Area</h1>
+
+                <div data-bind="visible: !isLoggedIn()" class="oj-flex oj-sm-flex-direction-column oj-md-flex-direction-column">
+                    <div class="oj-flex-item" id="1">
+
+                        <oj-label for="un">username</oj-label>
+                        <oj-input-text id="un" value="{{username}}"></oj-input-text>
+
+                    </div>
+                    <div class="oj-flex-item">
+
+                        <oj-label for="password">password</oj-label>
+                        <oj-input-password id="password" value="{{password}}"> </oj-input-password>
+
+                    </div>
+
+                    <div class="oj-flex-item">
+
+                        <oj-button id='button3' on-click='[[login]]' chroming='full'>login</oj-button>
+
+
+                    </div>
+                </div>
+            </div>
+            <div data-bind="visible: isLoggedIn">
+                <oj-button id='button4' on-click='[[logout]]' chroming='full'>logout</oj-button>
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
